@@ -14,7 +14,11 @@ const ProductGrid = (props) => {
                 X
               </button>
               <div>
-                <img className="product-image" src={product.image} />
+                <img
+                  className="product-image"
+                  src={product.image}
+                  alt="product"
+                />
               </div>
               <div className="product-name">{product.name}</div>
               <div className="product-price">$ {product.price}</div>
