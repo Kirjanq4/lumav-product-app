@@ -1,1 +1,54 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 20rem;
+}
+
+.input-item {
+  margin: 0.3rem;
+  padding: 0.6rem;
+  width: calc(100vh / 1.9);
+  border: 2px solid grey;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.06);
+}
+
+.submit-btn {
+  width: 15rem;
+  padding: 0.7rem 1rem;
+  margin: 0.5rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #90c57c;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
+  .input-item {
+    width: 25rem;
+  }
+
+  .submit-btn {
+    width: 20rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .input-item {
+    width: 50rem;
+  }
+
+  .submit-btn {
+    width: 30rem;
+  }
+}

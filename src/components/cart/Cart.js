@@ -3,12 +3,15 @@ import "./cart.css";
 
 const Cart = (props) => {
   return (
-    <div>
-      <div>Product in cart: {props.counter}</div>
+    <div className="cart-container">
+      <h4 className="cart-heading">
+        Product in cart: <span className="counter">{props.counter}</span>
+      </h4>
       <button
         onClick={() => {
           props.removeFromCart();
         }}
+        className="remove-btn"
       >
         Remove from cart
       </button>

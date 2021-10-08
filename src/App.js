@@ -10,13 +10,13 @@ function App() {
   const productData = [
     {
       id: 1,
-      image: "https://source.unsplash.com/random",
+      image: "https://picsum.photos/200",
       name: "Table",
       price: 200,
     },
     {
       id: 2,
-      image: "https://source.unsplash.com/random",
+      image: "https://picsum.photos/200",
       name: "Chair",
       price: 100,
     },
@@ -43,17 +43,19 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container">
       <header className="App-header">
         <h1>Product App</h1>
       </header>
-      <Form addProduct={addProduct} />
+      <div className="form-container">
+        <Form addProduct={addProduct} />
+        <Cart counter={counter} removeFromCart={removeFromCart} />
+      </div>
       <ProductGrid
         products={products}
         deleteProduct={deleteProduct}
         addToCart={addToCart}
       />
-      <Cart counter={counter} removeFromCart={removeFromCart} />
     </div>
   );
 }

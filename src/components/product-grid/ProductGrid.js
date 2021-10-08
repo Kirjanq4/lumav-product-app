@@ -1,19 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./product-grid.css";
 
 const ProductGrid = (props) => {
   return (
-    <div>
+    <div className="products-container">
       {props.products.length > 0
         ? props.products.map((product) => (
-            <div key={product.id}>
-              <button onClick={() => props.deleteProduct(product.id)}>
-                Delete
-              </button>
-              <div>src={product.image}</div>
-              <div>{product.name}</div>
-              <div>{product.price}</div>
+            <div key={product.id} className="product-container">
               <button
+                className="delete-btn"
+                onClick={() => props.deleteProduct(product.id)}
+              >
+                X
+              </button>
+              <div>
+                <img className="product-image" src={product.image} />
+              </div>
+              <div className="product-name">{product.name}</div>
+              <div className="product-price">$ {product.price}</div>
+              <button
+                className="add-to-cart-btn"
                 onClick={() => {
                   props.addToCart();
                 }}
