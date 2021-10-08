@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./product-grid.css";
 
-import ProductItem from "../product-item/ProductItem";
-
-const ProductGrid = () => {
+const ProductGrid = (props) => {
   return (
     <div>
-      <h1>Hello ProductGrid</h1>
-      <ProductItem />
+      {props.products.length > 0
+        ? props.products.map((product) => (
+            <div key={product.id}>
+              <button onClick={() => props.deleteProduct(product.id)}>
+                Delete
+              </button>
+              <div>src={product.image}</div>
+              <div>{product.name}</div>
+              <div>{product.price}</div>
+              <button
+                onClick={() => {
+                  props.addToCart();
+                }}
+              >
+                Add to cart
+              </button>
+            </div>
+          ))
+        : "No products"}
     </div>
   );
 };
